@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+          var SwitchButton = function(){
+
+            this.setConnectToLamp = function(electricLamp){
+                this.connectToLamp=electricLamp
+            }
+            this.getConnectToLamp = function(){
+                 return this.connectToLamp
+            }
+
+            this.statusBotton = function(){
+                if(this.status1 == true){
+                    document.write("Button is on"+"<br>")
+                }
+                if(this.status1 == false){
+                    document.write("Button is off"+"<br>")
+                }
+            }
+            this.turnOnButton = function(){
+                this.status1=true;
+            }
+            this.turnOffButton = function(){
+                this.status1=false;
+            }
+          }
+
+          var ElecTricLamp = function(){   
+
+             this.setElectriclamp = function(setConnectToLamp ){
+                 this.setElectriclamp=lamp;
+             }
+
+             this.getElectriclamp = function(){
+                 return this.electricLamp.getConnectToLamp()
+             }
+
+           this.statusLight =function(){
+                 if( this.status2 ==true){
+                      document.write("Light is on" +"<br>")
+                 }
+
+                 if(this.status2 ==false){
+                     document.write("Light is off"+"<br>")
+                 }
+           }
+
+           this.turnOffLight = function(){
+                this.status2=false;
+           }
+
+           this.turnOnLight = function(){
+               this.status2=true;
+           }
+          }
+
+          var electricLamp =new ElecTricLamp();
+          var switchButton = new SwitchButton();
+          switchButton.setConnectToLamp(electricLamp);
+        for ( var i =0 ; i<10 ; i++){
+
+          switchButton.turnOnButton();
+          switchButton.statusBotton()
+
+          electricLamp.turnOnLight();
+          electricLamp.statusLight();
+
+          switchButton.turnOffButton();
+          switchButton.statusBotton()
+
+          electricLamp.turnOffLight();
+          electricLamp.statusLight();  
+          document.write("<br>")        
+        }
+   </script>
+</body>
+</html>
