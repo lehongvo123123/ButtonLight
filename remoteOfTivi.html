@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          var Tivi = function(){
+              //set up tivi-------------------------------
+               this.setTivi = function(tivi){
+                    this.tivi=tivi
+               }
+               this.getTivi = function(){
+                   return this.Tivi
+               }
+               // Open Tivi----------------------------------
+               this.statusTivi = function(){
+                   if(this.status1 == true){
+                        document.write("Tivi is on" +"<br>");
+                   }
+                   if(this.status1==false){
+                       document.write("Tivi is off"+"<br>")
+                   } 
+               }
+               this.turnOnTivi = function(){
+                   this.status1=true;
+               }
+               this.turnOffTivi = function(){
+                   this.status1=false;
+               }
+               //state of Tivi current---------------------------------
+               this.stateTivi = function(state){
+                   document.write(state+" Is current state"+"<br>")
+               }
+               //--------------------------------------------------------
+               this.changeStateTivi = function(changeState){
+                    document.write(changeState+" After change state"+"<br>")
+               }
+               // desricber sound of tivi---------------------------------
+               this.soundTivi =function(sound){
+                   document.write(sound+" Is sound of Tv"+"<br>")
+               }
+               this.changeSoundTivi = function(changeSound){
+                    this.soundTivi=changeSound
+               }
+
+          }
+          //---------------------------------------------------------------
+          var Remote = function(){
+                 this.setConnetTivi =function(viti){
+                     this.setConnetTivi=viti
+                 }
+                 this.getConnetTivi = function(){
+                     return this.setConnetTivi.getTivi();
+                 }
+                 //remote Open tivi---------------------------------------
+                 this.remoteOpenTivi = function(){
+                   if(this.status2 == true){
+                        document.write("Tivi is on " +"<br>");
+                   }
+                   if(this.status2==false){
+                       document.write("Tivi is off"+"<br>")
+                   } 
+               }
+               this.turnOnTivi = function(){
+                   this.status2=true;
+               }
+               this.turnOffTivi = function(){
+                   this.status2=false;
+               }
+          
+          //--------------------------------------------------------------
+               this.remoteStateTivi = function(state1){
+                   document.write(state1+" Is current state"+"<br>")
+               }
+               //--------------------------------------------------------
+               this.remoteChangeStateTivi = function(changeState1){
+                    document.write(changeState1+" After change state"+"<br>")
+               }
+               // desricber sound of tivi---------------------------------
+               this.remotesoundTivi =function(sound1){
+                   document.write(sound1+" Is sound of Tv"+"<br>")
+               }
+               this.remotechangeSoundTivi = function(changeSound1){
+                document.write(changeSound1+" After change state"+"<br>")
+               }
+            }
+
+          //trying ---------------------------------------------------------
+          var SumSung  = new Tivi();
+           SumSung.setTivi("sumsung");
+           var remote = new Remote();
+           remote.setConnetTivi(SumSung);
+            remote.turnOnTivi();
+            remote.remoteOpenTivi();
+            remote.remoteStateTivi("vtv2");
+            remote.remotesoundTivi("20/30");
+            remote.remoteChangeStateTivi("vtv7");
+            remote.remotechangeSoundTivi("20/30");
+    
+
+
+    </script>
+</body>
+</html>
