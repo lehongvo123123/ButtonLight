@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+            var MouseEnergy = function(){
+               this.setMouse = function(mouse){
+                    this.mouse=mouse;
+               }
+               this.getMouse = function(){
+                     return this.mouse
+               }
+               this.ImcreateMouse = function(){
+                    if(this.mouse>0){
+                        this.mouse--
+                    }
+               }
+            }
+            var Cat =function(){
+                this.setCat = function(mouseEnergy1){
+                     this.mouseEnergy1=mouseEnergy1
+                }
+                this.getCatInfor = function(){
+                    return this.mouseEnergy1.getMouse();
+                }
+                this.eatMouse = function(){
+                    if(this.status===true){
+                        document.write("cat ate mouse"+"<br>")
+                    }
+                    if(this.status===false){
+                        document.write("cat not ate mouse"+"<br>")
+                    }
+                    
+                }
+                this.Eat = function(){
+                    this.mouseEnergy1.ImcreateMouse()
+                    this.status=true;
+                }
+                this.noEat = function(){
+                    this.status=false;
+                }
+            }
+            var mouse = new MouseEnergy();
+               mouse.setMouse(10);
+            var cat = new Cat();
+               cat.setCat(mouse);
+           for ( var i =0 ;i<10;i++){
+            document.write("Have"+" "+cat.getCatInfor()+"<br>");
+              cat.Eat()
+              cat.eatMouse()
+              document.write("Have"+" "+cat.getCatInfor()+"<br>");
+              cat.noEat();
+              cat.eatMouse();
+           }
+
+
+     </script>
+</body>
+</html>
